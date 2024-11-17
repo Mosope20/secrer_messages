@@ -2,6 +2,7 @@
 
 This project provides a simple Node.js application that allows users to encrypt and decrypt text messages using the Advanced Encryption Standard (AES) algorithm. It offers a straightforward interface for securing sensitive information.
 
+If you hang around a bit, I am working on a project that includes compressing and encrypting files. It could be useful in building applications that that require uploading of file(s).
 ---
 
 ## ✨ Features
