@@ -1,29 +1,25 @@
-# 🚀 Authentication and Authorization with JWT in Node.js
+# 🚀 🔐 Secret Messages 🔐
 
-This project demonstrates how to implement **authentication** and **authorization** in a Node.js application using **JSON Web Tokens (JWT)**. It provides a solid foundation for managing user authentication, securing routes, and implementing user roles.
+This project provides a simple Node.js application that allows users to encrypt and decrypt text messages using the Advanced Encryption Standard (AES) algorithm. It offers a straightforward interface for securing sensitive information.
 
 ---
 
 ## ✨ Features
 
-- 🔒 **User Registration and Login**: Allows users to register and log in to the application.
-- 🛡️ **JWT-Based Authentication**: Securely authenticate users with JWTs.
-- 🎯 **Role-Based Authorization**: Control access to resources based on user roles.
+- 🔒 **Text Encryption**: Encrypt plain text messages to secure sensitive information.
+- 🔓 **Text Decryption**: Decrypt previously encrypted messages to retrieve the original text.
 
 ---
 
 ## 📂 Project Structure
 
 ```plaintext
-Authentication_-_Authorization_with_Jwt_node_js/
-├── controllers/
-│   ├── authController.js
-├── middlewares/
-│   ├── authMiddleware.js
-├── routes/
-│   ├── authRoutes.js
+secret_messages/
+├── node_modules/
+├── .env
 ├── .gitignore
-├── index.js
+├── README.md
+├── app.js
 ├── package-lock.json
 ├── package.json
 ```
@@ -37,13 +33,13 @@ Follow these steps to set up and run the project locally:
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/Mosope20/Authentication_-_Authorization_with_Jwt_node_js.git
+git clone https://github.com/Mosope20/secret_messages.git
 ```
 
 ### 2️⃣ Navigate to the Project Directory
 
 ```bash
-cd Authentication_-_Authorization_with_Jwt_node_js
+cd secret_messages
 ```
 
 ### 3️⃣ Install Dependencies
@@ -57,8 +53,7 @@ npm install
 
 Create a .env file in the root directory to store sensitive information like JWT secret keys. For example:
 ```bash
-ACCESS_TOKEN_SECRET=your_access_token_secret
-REFRESH_TOKEN_SECRET=your_refresh_token_secret
+SECRET_KEY=your_secret_key_here
 ```
 
 ### 5️⃣ Run the Application
@@ -66,20 +61,19 @@ start the server with:
 ```bash
 npm start
 ```
-### 🎉 The application should now be running, and you can interact with its endpoints as defined in the routes directory.
+### 🎉 The application should now be running, and you can use it to encrypt and decrypt messages.
 
 ---
 
 ## 📡 API Endpoints
-- POST /signup: Registers a new user.
-- POST /login: Authenticates a user and returns a JWT.
-- GET /users,/update,/logout,/delete: Protected routes that requires a valid JWT.
+- GET /encrypt: Input the plain text you wish to encrypt. The application will return the encrypted message.
+- GET /decrypt: Input the encrypted message. The application will return the original plain text.
 
 ---
 
 ## 📦 Dependencies
 - express: Web framework for Node.js.
-- jsonwebtoken: Library to sign and verify JWTs.
+- crypto: Node.js built-in module for cryptographic functions.
 - dotenv: Loads environment variables from a .env file.
 
 ---
